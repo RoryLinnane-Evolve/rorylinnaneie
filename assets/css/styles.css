@@ -1,0 +1,179 @@
+html {
+    font-family: 'Poppins', sans-serif;
+    color: #f0f0f0;
+    background-color: black;
+}
+
+body {
+    width: 60%;
+    margin-left: 20%;
+    text-align: left;
+}
+
+header {
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid grey; /* Added grey line */
+}
+
+.technologies{
+    border-bottom: 1px solid grey; 
+    display: flex;
+}
+
+.technologies img{
+    height: 100px;
+}
+
+a {
+    color:red;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+section {
+    padding: 40px 20px;
+    text-align: left;
+}
+
+section h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.project {
+    background-color: black;
+    padding: 20px;
+    margin: 20px 0;
+    display: flex;
+}
+
+.project h3 {
+    margin-top: 0;
+}
+
+.project-text{
+    width:80%;
+}
+
+.project img{
+    width:20%;
+}
+
+.about h3 {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+footer {
+    background-color: black;
+    padding: 10px;
+    text-align: center;
+    color: #f0f0f0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer .social-icons {
+    margin-left: 20px;
+}
+
+footer .social-icons a {
+    color: #f0f0f0;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1.8em;
+    position: relative;
+    display: inline-block;
+}
+
+
+footer .social-icons a::before {
+    color: #ff0d00;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    transition: width 0.5s ease-in-out;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+footer .social-icons a:hover::before {
+    width: 100%;
+}
+
+.hover-effect-4 {
+    position: relative;
+    display: inline-block;
+}
+
+.hover-effect-4::before {
+    content: attr(data-hover);
+    color: #ff0d00;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    transition: width 0.5s ease-in-out;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.hover-effect-4:hover::before {
+    width: 100%;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.job{
+    display: flex;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.project .formula {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: right;
+}
+
+/* Override KaTeX default centering */
+.katex-display {
+    text-align: right !important;
+    margin: 0 !important;
+}
