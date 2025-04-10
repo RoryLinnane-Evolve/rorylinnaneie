@@ -18,13 +18,24 @@ header {
     border-bottom: 1px solid grey; /* Added grey line */
 }
 
-.technologies{
+.technologies {
     border-bottom: 1px solid grey; 
     display: flex;
+    justify-content: space-evenly; /* distributes items evenly */
+    align-items: center;
+    flex-wrap: wrap; /* allows wrapping on smaller screens */
+    padding: 20px 0;
 }
 
-.technologies img{
+.technologies a {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.technologies img {
     height: 100px;
+    object-fit: contain; /* prevents distortion */
 }
 
 a {
