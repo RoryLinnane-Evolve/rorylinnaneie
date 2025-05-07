@@ -67,6 +67,7 @@ nav ul li a {
 section {
     padding: 40px 20px;
     text-align: left;
+    border-bottom: 1px solid grey; /* Added grey line */
 }
 
 section h2 {
@@ -86,7 +87,7 @@ section h2 {
 }
 
 .project-text{
-    width:80%;
+    width:100%;
 }
 
 .project img{
@@ -175,6 +176,12 @@ h3 {
     margin: 20px 0;
 }
 
+.job img{
+    width: 150px;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
 .project .formula {
     width: 20%;
     display: flex;
@@ -187,4 +194,89 @@ h3 {
 .katex-display {
     text-align: right !important;
     margin: 0 !important;
+}
+
+/* General mobile styles */
+@media (max-width: 768px) {
+    p {
+        text-align: justify;
+    }
+    
+    body {
+        width: 90%;
+        margin: 0 auto;
+        justify-content: center;
+    }
+
+    header h1 {
+        font-size: 1.8em; /* Smaller font size for mobile */
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: grid; /* Stack navigation links vertically */
+        align-items: center;
+        margin: 10px 0;
+    }
+
+    nav ul li {
+        margin: 10px 10px; /* Add spacing between links */
+    }
+
+    .technologies {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsive grid */
+        gap: 15px; /* Space between items */
+        padding: 20px;
+        border-bottom: 1px solid grey;
+        justify-items: center; /* Center items horizontally */
+        align-items: center; /* Center items vertically */
+    }
+
+    .technologies img {
+        height: 80px; /* Reduce image size for mobile */
+        width: auto; /* Maintain aspect ratio */
+        object-fit: contain; /* Prevent distortion */
+    }
+    
+    .project {
+        display: flex;
+        flex-direction: column; /* Stack project text and images */
+        align-items: flex-start; /* Align content to the left */
+        text-align: left;
+        width: 100%; /* Use full width */
+        margin: 20px 0;
+        padding-left:0;
+    }
+    
+    .project-text {
+        width: 100%; /* Use full width */
+    }
+    
+    .job {
+        display: flex;
+        flex-direction: column; /* Stack job details and images */
+        align-items: center; /* Center all content horizontally */
+        text-align: center; /* Center text within the container */
+        width: 100%; /* Use full width */
+        margin: 20px 0;
+        padding-left:0;
+    }
+    
+    .job img {
+        width: 150px; /* Keep images at a fixed size */
+        height: auto; /* Maintain aspect ratio */
+        margin: 10px 0; /* Add spacing above and below */
+        display: block; /* Ensure the image behaves like a block element */
+        border-radius: 10px; /* Optional: rounded corners */
+    }
+
+    footer {
+        flex-direction: column; /* Stack footer content */
+        text-align: center;
+    }
+
+    footer .social-icons {
+        margin-top: 10px;
+    }
 }
