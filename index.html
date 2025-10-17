@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
+
 <body>
     <header>
         <h1>Rory Linnane</h1>
@@ -21,6 +22,11 @@
                 <li><a href="#contact" class="hover-effect-4" data-hover="Contact">Contact</a></li>
             </ul>
         </nav>
+
+        <!-- dark mode toggle (top-right) -->
+        <button id="dark-mode-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">
+            <span class="dm-icon" aria-hidden="true"></span>
+        </button>
     </header>
     <section class="technologies">
         <a href="https://azure.microsoft.com" target="_blank">
@@ -50,13 +56,19 @@
         <a href="https://www.postgresql.org" target="_blank">
             <img src="assets/images/technologies/postgres.png" alt="PostgreSQL">
         </a>
+        <a href="https://go.dev" target="_blank" aria-label="Go">
+            <img src="assets/images/technologies/go.png" alt="Go">
+        </a>
+        <a href="https://www.python.org" target="_blank" aria-label="Python">
+            <img src="assets/images/technologies/python.png" alt="Python">
+        </a>
     </section>
     <section id="about" class="about">
         <h2>About Me</h2>
-        <p> I am a first year student studying Immersive Software Engineering at The University of Limerick. 
-            I am a passionate developer specializing mainly in backend engineering, 
-            constantly exploring innovative solutions to streamline complex processes. 
-            Whether it's diving deep into algorithms or building robust server-side logic, 
+        <p> I am a second year student studying Immersive Software Engineering at The University of Limerick.
+            I am a passionate developer specializing mainly in backend engineering,
+            constantly exploring innovative solutions to streamline complex processes.
+            Whether it's diving deep into algorithms or building robust server-side logic,
             I thoroughly enjoy solving complex technical problems with software.
         </p>
     </section>
@@ -64,20 +76,29 @@
         <h2>Projects</h2>
         <div class="project">
             <div class="project-text">
+                <h3>Tool Augmented LLM framework</h3>
+                <p>Currently making some AI agent that can call tools, not sure what it'll turn out to be but its pretty cool. Check it out <a href="https://github.com/RoryLinnane-Evolve/Agent">here</a>.
+                </p>
+            </div>
+        </div>
+        <div class="project">
+            <div class="project-text">
                 <h3>Applied Maths project</h3>
                 <p>I completed this project as part of my Leaving Cert Applied Mathematics course. I created my own
-                    approximation to mathematically model a roller coaster going down a hill and into a curved section.
+                    approximation to mathematically model a roller coaster going down a hill and into a curved section. I thought it was cool anyway.
                     Link to that project <a href="https://github.com/RoryLinnane-Evolve/AppliedMathsProject">here</a>.
-                    This is an actual code snippet from the project. Wrecked my head.
                 </p>
             </div>
         </div>
         <div class="project">
             <div class="project-text">
                 <h3>Basketball Registration System</h3>
-                <p>When I was 16, my local basketball club faced issues with clunky registration software provided by Basketball Ireland,
-                    lacking proper customer support also. The size of the club increased from 110 to 290 during the previous
-                    2-3 years. To alleviate this administration burden, I decided to build a member registration system with integrated payment.
+                <p>When I was 16, my local basketball club faced issues with clunky registration software provided by
+                    Basketball Ireland,
+                    lacking proper customer support also. The size of the club increased from 110 to 290 during the
+                    previous
+                    2-3 years. To alleviate this administration burden, I decided to build a member registration system
+                    with integrated payment.
                     Link to that project <a href="https://github.com/RoryLinnane-Evolve/BasketBallClub">here</a>.
                 </p>
             </div>
@@ -86,51 +107,57 @@
             <div class="project-text">
                 <h3>Report Formatting</h3>
                 <p>
-                    When I was doing my transition year work experience for an archeologist, she complained to me about the strict company standards when it came to formatting 
-                    environmental impact assessment reports. To solve this problem for her and her colleagues, I decided to help by creating a Microsoft Word extension to automattically
-                    format the document to the company standards. Link to that project <a href="https://github.com/RoryLinnane-Evolve/ReportFormatting">here</a>.
+                    When I was doing my transition year work experience for an archeologist, she complained to me about
+                    the strict company standards when it came to formatting
+                    environmental impact assessment reports. To solve this problem for her and her colleagues, I decided
+                    to help by creating a Microsoft Word extension to automattically
+                    format the document to the company standards. Link to that project <a
+                        href="https://github.com/RoryLinnane-Evolve/ReportFormatting">here</a>.
                 </p>
-            </div> 
+            </div>
         </div>
     </section>
     <section id="work_experience">
         <h2>Work Experience</h2>
         <div class="job">
             <div>
-                <h3>Founder & Head of Software @ Kepri</h3>
-                <p>
-                    I am currently the lead backend engineer at Kepri. Kepri manages and automates the management of your inverter of your residential solar system.
-                    Kepri squeezes every last cent out of your solar solution by using solar generation forecasts to optimise your charge and discharge times 
-                    of your battery and the working mode of your inverter. See more <a href="https://kepri.ie/">here</a>.
-                </p>
+                <h3>Software Engineering Intern @ IONA</h3>
             </div>
             <div>
-                <img src="./assets/images/companies/kepri.png">
+                <a href="https://www.ionadrones.com/" target="_blank" aria-label="IONA">
+                    <img class="company-logo" src="./assets/images/companies/iona_logo.jpeg" alt="IONA logo">
+                </a>
             </div>
         </div>
         <div class="job">
             <div>
-                <h3>Jr Developer @ Evolve Technologies</h3>
-                <p>
-                    I worked as a Jr. Software Developer at <a href="https://www.evolvetech.ie">Evolve Tech</a>. I worked doing full stack development on ASP.NET web applications.
-                    I worked with Microsoft azure using MSSQL databases and with Azure CosmosDb. I did automated testing for web and mobile as well
-                    as mobile development with cross-platform Xamarin apps.
-                </p>
+                <h3>Software Engineering Intern @ Jarvio</h3>
             </div>
             <div>
-                <img src="./assets/images/companies/evolve.png">
+                <a href="https://www.jarvio.io/" target="_blank" aria-label="Jarvio">
+                    <img class="company-logo" src="./assets/images/companies/jarvio_logo.png" alt="Jarvio logo">
+                </a>
+            </div>
+        </div>
+
+        <div class="job">
+            <div>
+                <h3>Jr Developer @ Evolve Technologies</h3>
+            </div>
+            <div>
+                <a href="https://www.evolvetech.ie" target="_blank" aria-label="Evolve Technologies">
+                    <img class="company-logo" src="./assets/images/companies/evolve.png" alt="Evolve Technologies logo">
+                </a>
             </div>
         </div>
         <div class="job">
             <div>
                 <h3>System Tester/Jr Developer @ Evolve Technologies</h3>
-                <p>
-                    I worked as a System tester and a Jr Developer at <a href="https://www.evolvetech.ie">Evolve Tech</a>. I wrote automated tests for Web and mobile applications.
-                    I worked on multiple cross platform mobile apps. I worked on a new release for the Irish Whale and Dolphin Group(IWDG) mobile reporting tool.
-                </p>
             </div>
             <div>
-                <img src="./assets/images/companies/evolve.png">
+                <a href="https://www.evolvetech.ie" target="_blank" aria-label="Evolve Technologies">
+                    <img class="company-logo" src="./assets/images/companies/evolve.png" alt="Evolve Technologies logo">
+                </a>
             </div>
         </div>
     </section>
@@ -141,9 +168,12 @@
     <footer>
         <p>&copy; 2025 Rory Linnane</p>
         <div class="social-icons">
-            <a href="https://github.com/RoryLinnane-Evolve" target="_blank" data-hover="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/rory-linnane-840171209" target="_blank" data-hover="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/rlinnane" target="_blank" data-hover="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/RoryLinnane-Evolve" target="_blank" data-hover="GitHub"><i
+                    class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/rory-linnane/" target="_blank" data-hover="LinkedIn"><i
+                    class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/rlinnane" target="_blank" data-hover="Instagram"><i
+                    class="fab fa-instagram"></i></a>
         </div>
     </footer>
     <script src="./assets/js/index.js"></script>

@@ -1,282 +1,388 @@
-html {
-    font-family: 'Poppins', sans-serif;
-    color: #f0f0f0;
-    background-color: black;
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-    width: 60%;
-    margin-left: 20%;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
+/* Constrain content and center */
+header,
+main,
+section,
+footer {
+    width: 100%;
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Header */
 header {
-    background-color: black;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid grey; /* Added grey line */
-}
-
-.technologies {
-    border-bottom: 1px solid grey; 
     display: flex;
-    justify-content: space-evenly; /* distributes items evenly */
     align-items: center;
-    flex-wrap: wrap; /* allows wrapping on smaller screens */
-    padding: 20px 0;
-}
-
-.technologies a {
-    display: flex;
-    justify-content: center;
-    margin: 10px;
-}
-
-.technologies img {
-    height: 100px;
-    object-fit: contain; /* prevents distortion */
-}
-
-a {
-    color:red;
+    justify-content: space-between;
+    padding: 28px 0;
+    gap: 16px;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0 0 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #f0f0f0;
-    text-decoration: none;
+    font-size: 1.6rem;
     font-weight: 700;
 }
 
-section {
-    padding: 40px 20px;
-    text-align: left;
-    border-bottom: 1px solid grey; /* Added grey line */
-}
-
-section h2 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-}
-
-.project {
-    background-color: black;
-    padding: 20px;
-    margin: 20px 0;
+/* Navigation */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-}
-
-.project h3 {
-    margin-top: 0;
-}
-
-.project-text{
-    width:100%;
-}
-
-.project img{
-    width:20%;
-}
-
-.about h3 {
-    padding: 20px;
-    margin: 20px 0;
-}
-
-footer {
-    background-color: black;
-    padding: 10px;
-    text-align: center;
-    color: #f0f0f0;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
+    gap: 18px;
     align-items: center;
 }
 
-footer p {
+nav a {
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    /* keep color inheritance */
+    color: inherit;
+}
+
+/* Technologies icon strip */
+/* Make technologies section full-bleed and centered across viewport */
+.technologies {
+    /* override generic section max-width so this bar spans the viewport */
+    max-width: none;
+    width: calc(100vw - 40px);
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    margin: 12px auto 28px auto;
+    padding: 12px 20px;
+}
+
+.technologies img {
+    height: 36px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    opacity: 0.95;
+    transition: transform .18s ease, opacity .18s ease;
+    animation: float 6s ease-in-out infinite;
+}
+
+/* staggered delays so icons float at different times */
+.technologies a:nth-child(1) img {
+    animation-delay: 0s;
+}
+
+.technologies a:nth-child(2) img {
+    animation-delay: 0.3s;
+}
+
+.technologies a:nth-child(3) img {
+    animation-delay: 0.6s;
+}
+
+.technologies a:nth-child(4) img {
+    animation-delay: 0.9s;
+}
+
+.technologies a:nth-child(5) img {
+    animation-delay: 1.2s;
+}
+
+.technologies a:nth-child(6) img {
+    animation-delay: 1.5s;
+}
+
+.technologies a:nth-child(7) img {
+    animation-delay: 1.8s;
+}
+
+.technologies a:nth-child(8) img {
+    animation-delay: 2.1s;
+}
+
+.technologies a:nth-child(9) img {
+    animation-delay: 2.4s;
+}
+
+.technologies a:nth-child(10) img {
+    animation-delay: 2.7s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-6px) rotate(-1deg);
+    }
+
+    50% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    75% {
+        transform: translateY(6px) rotate(1deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* ensure hover still gives a subtle lift */
+.technologies a:hover img {
+    transform: translateY(-8px) scale(1.03);
+    opacity: 1;
+}
+
+/* Sections headings */
+section h2 {
+    font-size: 1.25rem;
+    margin-top: 36px;
+    margin-bottom: 12px;
+}
+
+/* About */
+.about p {
+    max-width: 70ch;
     margin: 0;
 }
 
-footer .social-icons {
-    margin-left: 20px;
+/* Projects list */
+#projects {
+    display: grid;
+    gap: 18px;
+    margin-bottom: 12px;
 }
 
-footer .social-icons a {
-    color: #f0f0f0;
-    margin: 0 10px;
-    text-decoration: none;
-    font-size: 1.8em;
-    position: relative;
-    display: inline-block;
-}
-
-
-footer .social-icons a::before {
-    color: #ff0d00;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0%;
-    transition: width 0.5s ease-in-out;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-footer .social-icons a:hover::before {
-    width: 100%;
-}
-
-.hover-effect-4 {
-    position: relative;
-    display: inline-block;
-}
-
-.hover-effect-4::before {
-    content: attr(data-hover);
-    color: #ff0d00;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0%;
-    transition: width 0.5s ease-in-out;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-.hover-effect-4:hover::before {
-    width: 100%;
-}
-
-h1,
-h2,
-h3 {
-    font-family: 'Montserrat', sans-serif;
-}
-
-.job{
-    display: flex;
-    padding: 20px;
-    margin: 20px 0;
-}
-
-.job img{
-    width: 150px;
+.project {
+    padding: 14px 16px;
     border-radius: 10px;
-    margin-left: 20px;
+    /* subtle separation without changing text color */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    background: rgba(255, 255, 255, 0.02);
 }
 
-.project .formula {
-    width: 20%;
-    display: flex;
+.project-text h3 {
+    margin: 0 0 6px 0;
+    font-size: 1rem;
+}
+
+/* Work experience layout */
+#work_experience .job {
+    display: grid;
+    grid-template-columns: 1fr 110px;
+    gap: 12px;
     align-items: center;
-    justify-content: flex-start;
-    text-align: right;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-/* Override KaTeX default centering */
-.katex-display {
-    text-align: right !important;
-    margin: 0 !important;
+#work_experience .job:last-child {
+    border-bottom: none;
 }
 
-/* General mobile styles */
-@media (max-width: 768px) {
-    p {
-        text-align: justify;
-    }
-    
-    body {
-        width: 90%;
-        margin: 0 auto;
-        justify-content: center;
+#work_experience h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Company logos (now links) */
+.company-logo {
+    max-width: 110px;
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+/* clickable image styles */
+#work_experience a {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#work_experience a:hover .company-logo {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Contact & footer */
+#contact p {
+    margin: 6px 0 18px 0;
+}
+
+footer {
+    padding: 18px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer .social-icons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+footer a {
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+/* Dark mode: toggle class on body */
+body {
+    transition: background-color 240ms ease, color 240ms ease;
+}
+
+/* Dark mode palette (keeps light colors unchanged) */
+body.dark {
+    background-color: #0b0c0f;
+    color: #e6e6e6;
+}
+
+/* subtle cards / project backgrounds adapt */
+.project {
+    background: rgba(255, 255, 255, 0.02);
+    transition: background 240ms ease, box-shadow 240ms ease;
+}
+
+body.dark .project {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* company logo hover shadows adapt */
+#work_experience a:hover .company-logo {
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.15);
+}
+
+body.dark #work_experience a:hover .company-logo {
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+}
+
+/* Dark mode for footer/social icons */
+footer {
+    transition: opacity 240ms ease;
+}
+
+body.dark footer {
+    opacity: 0.95;
+}
+
+/* Dark mode toggle button (top-right) */
+#dark-mode-toggle {
+    --size: 44px;
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 220ms ease;
+    z-index: 60;
+}
+
+/* icon inside toggle: animated sun/moon */
+.dm-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+    transition: background 260ms ease, box-shadow 260ms ease, transform 260ms ease;
+    background: #FFD54F;
+    /* sun color in light mode */
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+}
+
+/* sun rays */
+.dm-icon::before,
+.dm-icon::after {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 260ms ease, transform 260ms ease;
+}
+
+/* dark mode appearance */
+body.dark .dm-icon {
+    background: #f1f5f9;
+    /* moon fill */
+    transform: rotate(45deg) scale(0.95);
+    box-shadow: inset -3px -3px 6px rgba(0, 0, 0, 0.15);
+}
+
+body.dark .dm-icon::before {
+    opacity: 1;
+    transform: scale(0.6);
+}
+
+/* small press feedback */
+#dark-mode-toggle:active {
+    transform: scale(0.96);
+}
+
+/* ensure the toggle is visible on small viewports */
+@media (max-width: 680px) {
+    #dark-mode-toggle {
+        top: 12px;
+        right: 12px;
+        --size: 40px;
     }
 
-    header h1 {
-        font-size: 1.8em; /* Smaller font size for mobile */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
     }
 
-    nav ul {
-        display: flex;
-        flex-direction: grid; /* Stack navigation links vertically */
-        align-items: center;
-        margin: 10px 0;
-    }
-
-    nav ul li {
-        margin: 10px 10px; /* Add spacing between links */
-    }
-
-    .technologies {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsive grid */
-        gap: 15px; /* Space between items */
-        padding: 20px;
-        border-bottom: 1px solid grey;
-        justify-items: center; /* Center items horizontally */
-        align-items: center; /* Center items vertically */
+    #work_experience .job {
+        grid-template-columns: 1fr 84px;
     }
 
     .technologies img {
-        height: 80px; /* Reduce image size for mobile */
-        width: auto; /* Maintain aspect ratio */
-        object-fit: contain; /* Prevent distortion */
+        height: 30px;
     }
-    
-    .project {
-        display: flex;
-        flex-direction: column; /* Stack project text and images */
-        align-items: flex-start; /* Align content to the left */
-        text-align: left;
-        width: 100%; /* Use full width */
-        margin: 20px 0;
-        padding-left:0;
-    }
-    
-    .project-text {
-        width: 100%; /* Use full width */
-    }
-    
-    .job {
-        display: flex;
-        flex-direction: column; /* Stack job details and images */
-        align-items: center; /* Center all content horizontally */
-        text-align: center; /* Center text within the container */
-        width: 100%; /* Use full width */
-        margin: 20px 0;
-        padding-left:0;
-    }
-    
-    .job img {
-        width: 150px; /* Keep images at a fixed size */
-        height: auto; /* Maintain aspect ratio */
-        margin: 10px 0; /* Add spacing above and below */
-        display: block; /* Ensure the image behaves like a block element */
-        border-radius: 10px; /* Optional: rounded corners */
+}
+
+@media (max-width: 420px) {
+    #work_experience .job {
+        grid-template-columns: 1fr 74px;
     }
 
-    footer {
-        flex-direction: column; /* Stack footer content */
-        text-align: center;
-    }
-
-    footer .social-icons {
-        margin-top: 10px;
+    .company-logo {
+        max-width: 74px;
     }
 }
